@@ -1,0 +1,17 @@
+{
+    "name": "monday/monday",
+    "type": "project",
+    "description": "Simple blog app",
+    "authors": [
+        {
+            "name": "Ach Jailani",
+            "email": "leejungjay1124@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+	    "psr-4": {
+	        "App\\": "app/"
+	    }
+	}
+}
