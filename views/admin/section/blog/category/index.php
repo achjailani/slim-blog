@@ -11,10 +11,10 @@ $app = new CategoryController();
 
 		<div class="row">
 			<div class="col-4 col-md-4">
-				<div class="card">
+				<div class="card shadow">
 					<div class="card-body">
 						<h5 class="card-title">Add New</h5>
-						<form action="/admin/category" method="post">
+						<form action="/admin/blog/category" method="post">
 							<div class="mb-3">
 						    	<label for="category" class="form-label">Category name</label>
 						    	<input type="text" class="form-control" name="category">
@@ -26,11 +26,11 @@ $app = new CategoryController();
 				</div>
 			</div>
 			<div class="col-8 col-md-8">
-				<div class="card">
+				<div class="card shadow">
 					<div class="card-body">
 						<div class="table-responsive mt-3">
 							<table class="table table-borderless">
-								<thead class="table-dark">
+								<thead class="bg-primary text-light">
 								    <tr>
 								      <th scope="col">No</th>
 								      <th scope="col">Name</th>
@@ -46,8 +46,9 @@ $app = new CategoryController();
 								      <th scope="row"><?=$i++;?></th>
 								      <td><?=$row['name']?></td>
 								      <td>
-								      	<a href="" class="btn btn-outline-primary btn-sm">Edit</a>
-								      	<a href="" class="btn btn-outline-danger btn-sm">Hapus</a>
+								      	<a href="/admin/blog/category/edit/<?=$row['id']?>" class="btn btn-outline-primary btn-sm">Edit</a>
+								      	<a href="/admin/blog/category/detele/<?=$row['id']?>" class="btn btn-outline-danger btn-sm">Hapus</a>
+
 								      </td>
 								    </tr>
 								<?php } ?>

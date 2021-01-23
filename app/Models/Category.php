@@ -15,7 +15,7 @@ class Category extends DB {
 		$this->query("SELECT * FROM category WHERE id=:id");
 		$this->bind('id', $id);
 		$this->execute();
-		return $this->fetchAll();
+		return $this->fetch();
 	}
 
 	public function store(array $data) {
@@ -27,5 +27,13 @@ class Category extends DB {
 			return true;
 		}
 
+	}
+
+	public function destroy($id) {
+		$this->query("DELETE FROM category WHERE id=:id");
+		$this->bind('id', $id);
+		if($this->execute()) {
+			return true;
+		}
 	}
 }

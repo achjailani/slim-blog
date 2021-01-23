@@ -17,9 +17,14 @@ class CategoryController {
 
 	public function store(array $data) {
 		$app = new Category();
-		$data = $app->store($data);
-		if($data) {
-			return $this->index();
+		if(empty($data['category'])) {
+			echo '<script> alert("Failed! Category name can not be empty.")</script>';
+			echo '<script> window.location = "/admin/blog/category";</script>';
+		} else {
+			$data = $app->store($data);
+			if($data) {
+				header('Location: ' . $_SERVER['HTTP_REFERER']);
+			}
 		}
 	}
 
@@ -34,5 +39,12 @@ class CategoryController {
 			return $app->all();
 		}
 		return $app->show($id);
+	}
+
+	public function delete($id) {
+		$app = new Category();
+		if($app->destroy($id)){
+			header('Location: ' . $_SERVER['HTTP_REFERER']);
+		}
 	}
 }
