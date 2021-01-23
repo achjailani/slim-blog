@@ -17,9 +17,9 @@
           <small class="d-block username">Hi, Jay</small>
         </div>
         <div class="side-menu">
-          <a href="#">Home</a>
-          <a href="#services" id="">Blog</a>
-          <a href="#clients">Blog Category</a>
+          <a href="/admin">Home</a>
+          <a href="/admin/blog">Blog</a>
+          <a href="/admin/blog">User</a>
           <a href="#">Logout</a>
         </div>       
       </div>

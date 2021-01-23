@@ -41,7 +41,8 @@ $app = new BlogController();
 							  	<label for="content" class="form-label"> Content</label>
 							  	<textarea id="editor" name="content"></textarea>
 							  </div>
-							  <button type="submit" class="btn btn-primary">Submit</button>
+							  <button type="submit" class="btn btn-primary">Publish</button>
+							  <button type="reset" class="btn btn-danger">Cancel</button>
 							</form>
 						</div>
 					</div>

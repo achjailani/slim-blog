@@ -1,53 +1,30 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use GuahanWeb\Http;
+use Buki\Router\Router;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 use App\Controllers\CategoryController;
 use App\Controllers\BlogController;
 
-$router = Http\Router::instance();
+$route = new Router();
 
-$router->get('/', function ($req, $res) {
-    $app = new CategoryController();
-    $app->index();
+$route->get('/', function(Request $req, Response $res){
+	require_once 'views/admin/home.php';
 });
 
-$router->get('/admin', function($req, $res) {
-	require_once 'views/admin/layout/app.php';
-});
-$router->get('/admin/blog', function($req, $res) {
+$route->get('/admin/blog', function(Request $req, Response $res){
 	$app = new BlogController();
 	$app->index();
 });
-$router->get('/admin/blog/create', function($req, $res) {
+$route->get('/admin/blog/create', function(Request $req, Response $res){
 	$app = new BlogController();
 	$app->create();
 });
-$router->post('/admin/blog', function($req, $res) {
+$route->post('/admin/blog', function(Request $req, Response $res){
 	$app = new BlogController();
-	$res->send(array(
-        'method' => $req->method,
-        'uri' => $req->uri,
-        'query' => $req->query,
-        'headers' => $req->headers,
-        'body' => $req->body
-    ));
+	$app->store($req->request->all(), $req->files->get('cover'));
 });
 
-$router->get('/admin/category', function($req, $res) {
-	$app = new CategoryController();
-	$app->index();
-});
-$router->post('/admin/category', function($req, $res) {
-	parse_str($req->body, $data);
-	$app = new CategoryController();
-	$app->store($data);
-});
-$router->get('/admin/category/{id}', function($req, $res) {
-	$app = new CategoryController();
-    $app->edit($req->id);
-});
-
-
-// start the app
-$router->process();
+$route->run();
