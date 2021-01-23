@@ -18,10 +18,10 @@
         </div>
         <div class="side-menu">
           <a href="#">Home</a>
-          <a href="#services">Blog</a>
-          <a href="#clients">User</a>
+          <a href="#services" id="">Blog</a>
+          <a href="#clients">Blog Category</a>
           <a href="#">Logout</a>
-        </div>        
+        </div>       
       </div>
 
       <div class="main">
