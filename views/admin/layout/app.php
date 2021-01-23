@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+    <title>Monday - Slim Blog</title>
+
     <link rel="stylesheet" href="public/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/app.css">
-    <title>Hello, world!</title>
   </head>
   <body>
     <div class="wrapper">
@@ -18,10 +17,9 @@
           <small class="d-block username">Hi, Jay</small>
         </div>
         <div class="side-menu">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#clients">Clients</a>
-          <a href="#contact">Contact</a>
+          <a href="#">Home</a>
+          <a href="#services">Blog</a>
+          <a href="#clients">User</a>
           <a href="#">Logout</a>
         </div>        
       </div>

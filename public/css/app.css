@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	font-size: 12px;
 	font-family: "Lato", sans-serif;
+	background-color: #f4f8fb !important;
 }
 
 .wrapper {
@@ -29,7 +30,7 @@ body {
 
 .sidebar .sidenav-header {
 	padding-left: 15px;
-	border-bottom: 1px solid #85929E;
+	border-bottom: 1px solid #F8F9F9;
 	height: 70px;
 }
 
@@ -58,11 +59,15 @@ body {
 
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
   padding: 15px 10px;
+  font-size: 16px;
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav .side-menu a {font-size: 18px;}
+}
+
+.header-page {
+	margin-bottom: 20px;
 }
