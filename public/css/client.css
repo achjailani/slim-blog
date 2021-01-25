@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-family: "Lato", sans-serif;
+	background-color: #f4f8fb !important;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+.navbar-nav { 
+    margin-left: auto; 
+} 
+
+.main {
+	margin-top: 20px;
+}

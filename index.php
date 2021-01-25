@@ -11,7 +11,7 @@ use App\Controllers\BlogController;
 $route = new Router();
 
 $route->get('/', function(Request $req, Response $res){
-	require_once 'views/admin/home.php';
+	require_once 'views/client/home.php';
 });
 
 $route->get('/admin', function(Request $req, Response $res) {
