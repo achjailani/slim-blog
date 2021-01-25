@@ -51,8 +51,8 @@ $app = new BlogController();
 											?>
 										</td>
 										<td>
-											<a href="" class="btn btn-outline-primary btn-sm">Edit</a>
-											<a href="" class="btn btn-outline-danger btn-sm">Hapus</a>
+											<a href="/admin/blog/edit/<?=$row['id']?>" class="btn btn-outline-primary btn-sm">Edit</a>
+											<a href="/admin/blog/delete/<?=$row['id']?>" class="btn btn-outline-danger btn-sm">Hapus</a>
 										</td>
 									</tr>
 								<?php } ?>

@@ -31,6 +31,18 @@ $route->post('/admin/blog', function(Request $req, Response $res){
 	$app = new BlogController();
 	$app->store($req->request->all(), $req->files->get('cover'));
 });
+$route->get('/admin/blog/edit/:id', function($id) {
+	$app = new BlogController();
+	$app->edit($id);
+});
+$route->post('/admin/blog/update', function(Request $req, Response $res) {
+	$app = new BlogController();
+	$app->update($req->request->all(), $req->files->get('cover'));
+});
+$route->get('/admin/blog/delete/:id', function($id) {
+	$app = new BlogController();
+	$app->delete($id);
+});
 
 $route->get('/admin/blog/category', function(Request $req, Response $res) {
 	$app = new CategoryController();
