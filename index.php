@@ -15,6 +15,7 @@ $route->get('/', function(Request $req, Response $res){
 });
 
 $route->get('/admin', function(Request $req, Response $res) {
+	session_start();
 	require_once 'views/admin/home.php';
 });
 
@@ -41,7 +42,12 @@ $route->post('/admin/blog/category', function(Request $req, Response $res) {
 });
 $route->get('/admin/blog/category/edit/:id', function($id) {
 	$app = new CategoryController();
+	$app->edit($id);
 	require_once 'views/admin/section/blog/category/edit.php';
+});
+$route->post('/admin/blog/category/update', function(Request $req, Response $res) {
+	$app = new CategoryController();
+	$app->update($req->request->all());
 });
 
 $route->get('/admin/blog/category/detele/:id', function($id) {

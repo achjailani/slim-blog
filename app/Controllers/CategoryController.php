@@ -29,7 +29,20 @@ class CategoryController {
 	}
 
 	public function edit($id) {
-		echo $id;
+		$_SESSION['category_id'] = $id;
+		require_once 'views/admin/section/blog/category/edit.php';
+	}
+
+	public function update(array $data) {
+		if(empty($data['category'])) {
+			echo '<script> alert("Failed! Category name can not be empty.")</script>';
+			echo '<script> window.location = "/admin/blog/category/edit/'.$data['id'].'";</script>';
+		} else { 
+			$model = new Category();
+			if($model->update($data)) {
+				header('Location: ' . $_SERVER['HTTP_REFERER']);
+			}
+		}
 	}
 
 	public function show($id = null) {

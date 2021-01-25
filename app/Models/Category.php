@@ -29,6 +29,17 @@ class Category extends DB {
 
 	}
 
+	public function update(array $data) {
+		$updated_at =  date('Y-m-d H:i:s');
+		$this->query("UPDATE category SET name=:name, updated_at=:updated_at WHERE id=:id");
+		$this->bind('name', $data['category']);
+		$this->bind('updated_at', $updated_at);
+		$this->bind('id', $data['id']);
+		if($this->execute()) {
+			return true;
+		}
+	}
+
 	public function destroy($id) {
 		$this->query("DELETE FROM category WHERE id=:id");
 		$this->bind('id', $id);
