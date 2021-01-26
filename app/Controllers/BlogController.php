@@ -14,6 +14,20 @@ class BlogController {
 		require_once 'views/admin/section/blog/create.php';
 	}
 
+	public function home() {
+		require_once 'views/client/section/blog/index.php';
+	}
+
+	public function detail($slug) {
+		$model = new Blog();
+		return $model->get($slug);
+	}
+
+	public function view($slug) {
+		$_SESSION['slug'] = $slug;
+		require_once 'views/client/section/blog/view.php';
+	}
+
 	public function store(array $data, $file) {
 
 		if(empty($data['title'])) {

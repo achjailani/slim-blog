@@ -21,13 +21,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active text-light" aria-current="page" href="#">About</a>
+                <a class="nav-link active text-light" aria-current="page" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#">Blog</a>
+                <a class="nav-link text-light" href="/blog">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#">Contact</a>
+                <a class="nav-link text-light" href="/contact">Contact</a>
               </li>
             </ul>
           </div>

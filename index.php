@@ -14,13 +14,28 @@ $route->get('/', function(Request $req, Response $res){
 	require_once 'views/client/home.php';
 });
 
+$route->get('/about', function(){
+	require_once 'views/client/about.php';
+});
+$route->get('/contact', function(){
+	require_once 'views/client/contact.php';
+});
+$route->get('/blog', function(Request $req, Response $res){
+	$app = new BlogController();
+	$app->home(); 
+});
+$route->get('/blog/:slug', function($slug) {
+	$app = new BlogController();
+	$app->view($slug);
+});
+
+
 $route->get('/admin', function(Request $req, Response $res) {
 	session_start();
 	require_once 'views/admin/home.php';
 });
-
-$route->get('/admin/blog', function(Request $req, Response $res){
-	$app = new BlogController();
+$route->get('/admin/blog', function() {
+	$app =  new BlogController();
 	$app->index();
 });
 $route->get('/admin/blog/create', function(Request $req, Response $res){

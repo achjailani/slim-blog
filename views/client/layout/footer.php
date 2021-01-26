@@ -1,7 +1,7 @@
  </div>
       </div>
 
-      <footer class="bg-primary text-white text-center text-lg-start mt-4">
+      <footer class="bg-primary text-white text-center text-lg-start mt-4 mb-auto">
 		  <!-- Grid container -->
 		  <div class="container p-4">
 		    <!--Grid row-->

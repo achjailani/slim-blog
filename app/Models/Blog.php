@@ -18,6 +18,13 @@ class Blog extends DB {
 		return $this->fetch();
 	}
 
+	public function get($slug) {
+		$this->query("SELECT * FROM blog WHERE slug=:slug");
+		$this->bind('slug', $slug);
+		$this->execute();
+		return $this->fetch();
+	}
+
 	public function update(array $data) {
 		$this->query("UPDATE blog SET category_id=:category_id, title=:title, slug=:slug, cover=:cover, content=:content, updated_at=:updated_at WHERE id=:id");
 		$this->bind('category_id', $data['category']);

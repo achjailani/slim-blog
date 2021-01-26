@@ -28,3 +28,20 @@ body {
 .jombo .jombo-content {
 	padding-top: 6%;
 }
+
+.view-image {
+	height: 400px;
+}
+
+.published {
+	font-size: 12px;
+}
+.card-title-detail {
+	font-size: 30px;
+}
+.contact {
+	height: 400px;
+}
+.about {
+	height: 400px;
+}

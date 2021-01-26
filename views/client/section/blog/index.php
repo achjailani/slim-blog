@@ -5,10 +5,10 @@ use App\Controllers\BlogController;
 $app  = new BlogController();
 $data = $app->show();
 ?>
-    <div class="jombo">
-      <div class="jombo-content container-fluid">
-         <h3 class="display-5">Monday Social Networking</h3>
-         <p class="lead">Welcome to monday blog, you can read professional article here, enjoy your life</p>
+    <div class="row mb-4 mt-4">
+      <div class="col-12 col-md-12 text-center">
+        <h2>Explore your read</h2>
+        <p>This page contains many kind of professional articles you can read here, just enjoy your day</p>
       </div>
     </div>
     <div class="row">
