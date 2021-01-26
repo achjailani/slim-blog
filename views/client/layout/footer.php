@@ -18,41 +18,17 @@
 
 		      <!--Grid column-->
 		      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-		        <h5 class="text-uppercase">Links</h5>
+		        <h5 class="">Feature</h5>
 
 		        <ul class="list-unstyled mb-0">
 		          <li>
-		            <a href="#!" class="text-white">Link 1</a>
+		            <a href="/about" class="text-white">About</a>
 		          </li>
 		          <li>
-		            <a href="#!" class="text-white">Link 2</a>
+		            <a href="/blog" class="text-white">Blog</a>
 		          </li>
 		          <li>
-		            <a href="#!" class="text-white">Link 3</a>
-		          </li>
-		          <li>
-		            <a href="#!" class="text-white">Link 4</a>
-		          </li>
-		        </ul>
-		      </div>
-		      <!--Grid column-->
-
-		      <!--Grid column-->
-		      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-		        <h5 class="text-uppercase mb-0">Links</h5>
-
-		        <ul class="list-unstyled">
-		          <li>
-		            <a href="#!" class="text-white">Link 1</a>
-		          </li>
-		          <li>
-		            <a href="#!" class="text-white">Link 2</a>
-		          </li>
-		          <li>
-		            <a href="#!" class="text-white">Link 3</a>
-		          </li>
-		          <li>
-		            <a href="#!" class="text-white">Link 4</a>
+		            <a href="/contact" class="text-white">Contact</a>
 		          </li>
 		        </ul>
 		      </div>

@@ -45,3 +45,7 @@ body {
 .about {
 	height: 400px;
 }
+
+.list-unstyled li a {
+	text-decoration: none;
+}
