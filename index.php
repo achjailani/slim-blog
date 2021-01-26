@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use App\Controllers\CategoryController;
 use App\Controllers\BlogController;
+use App\Controllers\UserController;
 
 $route = new Router();
 
@@ -34,6 +35,8 @@ $route->get('/admin', function(Request $req, Response $res) {
 	session_start();
 	require_once 'views/admin/home.php';
 });
+
+// Blog admin
 $route->get('/admin/blog', function() {
 	$app =  new BlogController();
 	$app->index();
@@ -59,6 +62,7 @@ $route->get('/admin/blog/delete/:id', function($id) {
 	$app->delete($id);
 });
 
+// Blog category
 $route->get('/admin/blog/category', function(Request $req, Response $res) {
 	$app = new CategoryController();
 	$app->index();
@@ -76,10 +80,19 @@ $route->post('/admin/blog/category/update', function(Request $req, Response $res
 	$app = new CategoryController();
 	$app->update($req->request->all());
 });
-
 $route->get('/admin/blog/category/detele/:id', function($id) {
 	$app = new CategoryController();
 	$app->delete($id);
 });
 
+
+// User
+$route->get('/admin/user', function() {
+	$app = new UserController();
+	$app->index();
+});
+$route->post('/admin/user', function(Request $req, Response $res){
+	$app = new UserController();
+	$app->store($req->request->all());
+});
 $route->run();

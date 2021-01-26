@@ -19,7 +19,7 @@
         <div class="side-menu">
           <a href="/admin">Home</a>
           <a href="/admin/blog">Blog</a>
-          <a href="/admin/blog">User</a>
+          <a href="/admin/user">User</a>
           <a href="#">Logout</a>
         </div>       
       </div>

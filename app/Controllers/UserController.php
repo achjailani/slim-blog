@@ -6,6 +6,23 @@ use App\Models\User;
 class UserController {
 
 	public function index() {
-		echo __DIR__ . 'Hello \n';
+		require_once 'views/admin/section/user/index.php';
+	}
+
+	public function get($id = null) {
+		$model = new User();
+		if(is_null($id)) {
+			return $model->all();
+		}
+		return $model->find($id);
+	}
+
+	public function store(array $data) {
+		$model = new User();
+		if($model->store($data)) {
+			header('Location: ' . $_SERVER['HTTP_REFERER']);
+		} else {
+			echo "Hello";
+		}
 	}
 }
