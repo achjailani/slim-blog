@@ -1,54 +1,29 @@
-<?php require_once 'views/client/layout/header.php';?>
+<?php 
+require_once 'views/client/layout/header.php';
+use App\Controllers\BlogController;
+
+$app  = new BlogController();
+$data = $app->show();
+?>
+    <div class="jombo">
+      <div class="jombo-content container-fluid">
+         <h3 class="display-5">Monday Social Networking</h3>
+         <p class="lead">Welcome to monday blog, you can read professional article here, enjoy your life</p>
+      </div>
+    </div>
     <div class="row">
+      <?php
+      foreach($data as $row){
+      ?>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
           <div class="card">
-            <img src="https://images.unsplash.com/photo-1611227747261-2f8ecb6d8ec4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
+            <img src="/public/img/blog/<?=$row['cover']?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title"><?=$row['title']?></h5>
+              <p class="card-text"><?=(strlen($row['content']) > 93) ? substr($row['content'],0,93)." . . .":$row['content'];?></p>
+              <a href="/blog/detail/<?=$row['slug']?>" class="btn btn-primary btn-sm">See details</a>
             </div>
           </div>
         </div>
-         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1611227747261-2f8ecb6d8ec4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1611227747261-2f8ecb6d8ec4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1611227747261-2f8ecb6d8ec4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1611227747261-2f8ecb6d8ec4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        <?php } ?>
 <?php require_once 'views/client/layout/footer.php';?>

@@ -18,7 +18,13 @@ body {
 .navbar-nav { 
     margin-left: auto; 
 } 
-
 .main {
 	margin-top: 20px;
+}
+.jombo {
+	height:240px;
+	border-radius: 5px;
+}
+.jombo .jombo-content {
+	padding-top: 6%;
 }

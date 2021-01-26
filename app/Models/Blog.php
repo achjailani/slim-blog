@@ -6,7 +6,7 @@ use App\Models\DB;
 class Blog extends DB {
 
 	public function all() {
-		$this->query('SELECT blog.id, blog.title, blog.is_published, category.name FROM `blog` LEFT JOIN `category` ON category.id = blog.category_id');
+		$this->query('SELECT blog.id, blog.title, blog.slug, blog.cover, blog.content, blog.is_published, category.name FROM `blog` LEFT JOIN `category` ON category.id = blog.category_id');
 		$this->execute();
 		return $this->fetchAll();
 	}
