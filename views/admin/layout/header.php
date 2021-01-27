@@ -21,7 +21,7 @@
     <div class="wrapper">
       <div class="sidebar">
         <div class="sidenav-header mb-4">
-          <h2>Monday</h2>
+          <h2>Bluepeer</h2>
           <small class="d-block username">Hi, <?=$_SESSION['username']?></small>
         </div>
         <div class="side-menu">
