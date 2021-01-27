@@ -3,6 +3,7 @@ require_once 'views/admin/layout/header.php';
 use App\Controllers\UserController;
 
 $app = new UserController(); 
+$data = $app->get($_SESSION['user_edit_id']);
 ?>
 	<div class="container">
 		<div class="d-sm-flex align-items-center justify-content-between header-page">
@@ -14,22 +15,19 @@ $app = new UserController();
 				<div class="card shadow">
 					<div class="card-body">
 						<h5 class="card-title">Add New</h5>
-						<form action="/admin/user" method="post">
+						<form action="/admin/user/update" method="post">
 							<div class="mb-3">
 						    	<label for="name" class="form-label">Name</label>
-						    	<input type="text" class="form-control" name="name">
+						    	<input type="text" class="form-control" name="name" value="<?=$data['name']?>">
+						    	<input type="hidden" name="id" value="<?=$data['id']?>">
 						  	</div>
 						  	<div class="mb-3">
 						    	<label for="username" class="form-label">Username</label>
-						    	<input type="text" class="form-control" name="username">
+						    	<input type="text" class="form-control" name="username" value="<?=$data['username']?>">
+						    	<input type="hidden" name="old_username" value="<?=$data['username']?>">
 						    	<div class="form-text">* Username should be unique.</div>
 						  	</div>
-						  	<div class="mb-3">
-						    	<label for="password" class="form-label">Password</label>
-						    	<input type="password" class="form-control" name="password">
-						  	</div>
-						  	<button type="submit" class="btn btn-primary">Save</button>
-						  	<button type="reset" class="btn btn-danger">Cancel</button>
+						  	<button type="submit" class="btn btn-primary">Update</button>
 						</form>
 					</div>
 				</div>

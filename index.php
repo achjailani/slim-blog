@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Controllers\CategoryController;
 use App\Controllers\BlogController;
 use App\Controllers\UserController;
+use App\Controllers\AuthController;
+use App\Config\Fence;
 
 $route = new Router();
 
@@ -31,9 +33,24 @@ $route->get('/blog/:slug', function($slug) {
 });
 
 
-$route->get('/admin', function(Request $req, Response $res) {
-	session_start();
+$route->get('/admin', function() {
 	require_once 'views/admin/home.php';
+});
+
+// Login
+$route->get('/admin/login', function() {
+	$app = new AuthController();
+	$app->index();
+});
+$route->post('/admin/login', function(Request $req, Response $res){
+	$app = new AuthController();
+	$app->login($req->request->all());
+});
+
+// Logout
+$route->get('/admin/logout', function(){
+	$app = new AuthController();
+	$app->logout();
 });
 
 // Blog admin
@@ -95,4 +112,18 @@ $route->post('/admin/user', function(Request $req, Response $res){
 	$app = new UserController();
 	$app->store($req->request->all());
 });
+$route->get('/admin/user/edit/:id', function($id){
+	$app = new UserController();
+	$app->edit($id);
+});
+$route->post('/admin/user/update', function(Request $req, Response $res){
+	$app = new UserController();
+	$app->update($req->request->all());
+});
+$route->get('/admin/user/delete/:id', function($id){
+	$app = new UserController();
+	$app->delete($id);
+});
+
+
 $route->run();

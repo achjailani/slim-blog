@@ -1,3 +1,11 @@
+<?php
+  use App\Config\Fence;
+  
+  if(!Fence::isLogedIn()) {
+    return Fence::throw();
+    session_destroy();
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,13 +22,17 @@
       <div class="sidebar">
         <div class="sidenav-header mb-4">
           <h2>Monday</h2>
-          <small class="d-block username">Hi, Jay</small>
+          <small class="d-block username">Hi, <?=$_SESSION['username']?></small>
         </div>
         <div class="side-menu">
           <a href="/admin">Home</a>
           <a href="/admin/blog">Blog</a>
-          <a href="/admin/user">User</a>
-          <a href="#">Logout</a>
+          <?php
+            if($_SESSION['role'] == 'owner'){
+          ?>
+            <a href="/admin/user">User</a>
+          <?php } ?>
+          <a href="/admin/logout">Logout</a>
         </div>       
       </div>
 
