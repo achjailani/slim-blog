@@ -7,8 +7,8 @@ $data = $app->show();
 ?>
     <div class="jombo">
       <div class="jombo-content container-fluid">
-         <h3 class="display-5">Monday Social Networking</h3>
-         <p class="lead">Welcome to monday blog, you can read professional article here, enjoy your life</p>
+         <h3 class="display-5">Bluepeer Social Networking</h3>
+         <p class="lead">Welcome to bluepeer blog, you can read professional article here, enjoy your life</p>
       </div>
     </div>
     <div class="row">

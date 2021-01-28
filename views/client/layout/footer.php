@@ -11,7 +11,7 @@
 		        <h5 class="text-uppercase">Monday</h5>
 
 		        <p>
-		         	Monday is professional blog for professional people who want read best article according to the instresting
+		         	Bluepeer is professional blog for professional people who want read best article according to the instresting
 		        </p>
 		      </div>
 		      <!--Grid column-->
@@ -39,7 +39,7 @@
 		  <!-- Grid container -->
 		  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
 		    © 2021 Copyright:
-		    <a class="text-white" href="hellomonday.com">Monday.com</a>
+		    <a class="text-white" href="https://bluepeer.herokuapp.com/">Bluepeer</a>
 		  </div>
 		</footer>
     </div>
